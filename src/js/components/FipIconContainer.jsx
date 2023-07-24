@@ -252,7 +252,7 @@ class FipIconContainer extends React.PureComponent {
 					role="button"
 					tabIndex={0}
 					onKeyDown={event => this.handlePageKeyBoard(event, 'prev')}
-					onClick={event => this.handleChangePage(event, 'prev')}
+					onClick={event => { event.stopPropagation(); return this.handleChangePage(event, 'prev');}}
 				>
 					<span
 						role="presentation"
@@ -270,7 +270,7 @@ class FipIconContainer extends React.PureComponent {
 					role="button"
 					tabIndex={0}
 					onKeyDown={event => this.handlePageKeyBoard(event, 'next')}
-					onClick={event => this.handleChangePage(event, 'next')}
+					onClick={event => { event.stopPropagation(); return this.handleChangePage(event, 'next');}}
 				>
 					<span
 						role="presentation"
